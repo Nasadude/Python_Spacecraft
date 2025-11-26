@@ -9,6 +9,8 @@
     "python.analysis.typeCheckingMode": "basic",
     "python-envs.pythonProjects": [],
     "cSpell.words": [
-        "accn"
+        "accn",
+        "Kutta",
+        "Runge"
     ]
 }
