@@ -7,5 +7,8 @@
     "python.linting.enabled": true,
     "python.formatting.provider": "autopep8",
     "python.analysis.typeCheckingMode": "basic",
-    "python-envs.pythonProjects": []
+    "python-envs.pythonProjects": [],
+    "cSpell.words": [
+        "accn"
+    ]
 }
