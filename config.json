@@ -1,5 +1,5 @@
 {
-  "planet": "Mars",
+  "planet": "Earth",
   "numerical_method": "rk4",
 
   "colors": {
