@@ -1,0 +1,73 @@
+{
+  "planet": "Mars",
+  "numerical_method": "rk4",
+
+  "colors": {
+    "sun": "yellow",
+    "orbit": "white",
+    "perihelion": "cyan",
+    "aphelion": "magenta",
+    "background": "dark_background"
+  },
+
+  "planets": {
+    "Mercury": {
+      "position_at_perihelion": 46.0,
+      "velocity_at_perihelion": 58.98,
+      "orbital_period_days": 88.0,
+      "colors": { "orbit": "orange", "perihelion": "red", "aphelion": "purple" }
+    },
+
+    "Venus": {
+      "position_at_perihelion": 107.5,
+      "velocity_at_perihelion": 35.26,
+      "orbital_period_days": 224.7,
+      "colors": { "orbit": "gold", "perihelion": "white", "aphelion": "darkred" }
+    },
+
+    "Earth": {
+      "position_at_perihelion": 147.1,
+      "velocity_at_perihelion": 30.29,
+      "orbital_period_days": 365.2,
+      "colors": { "orbit": "tab:blue", "perihelion": "grey", "aphelion": "blue" }
+    },
+    
+    "Mars": {
+      "position_at_perihelion": 206.7,
+      "velocity_at_perihelion": 26.50,
+      "orbital_period_days": 687.0,
+      "colors": { "orbit": "red", "perihelion": "yellow", "aphelion": "brown" }
+    },
+
+    "Jupiter": {
+      "position_at_perihelion": 740.5,
+      "velocity_at_perihelion": 13.72,
+      "orbital_period_days": 4331,
+      "colors": { "orbit": "orange", "perihelion": "gold", "aphelion": "brown" }
+    },
+
+    "Saturn": {
+      "position_at_perihelion": 1357.6,
+      "velocity_at_perihelion": 10.18,
+      "orbital_period_days": 10747
+    },
+
+    "Uranus": {
+      "position_at_perihelion": 2732.7,
+      "velocity_at_perihelion": 7.11,
+      "orbital_period_days": 30589
+    },
+
+    "Neptune": {
+      "position_at_perihelion": 4471.1,
+      "velocity_at_perihelion": 5.50,
+      "orbital_period_days": 59800
+    },
+
+    "Pluto": {
+      "position_at_perihelion": 4436.8,
+      "velocity_at_perihelion": 6.10,
+      "orbital_period_days": 90560
+    }
+  }
+}
