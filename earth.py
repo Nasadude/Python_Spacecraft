@@ -49,6 +49,9 @@ v = np.empty(shape=(len(t),2))
 # Set the Initial conditions for position and velocity
 r[0], v[0] = r_0, v_0
 
+# Choosing the Numerical method of Integration
+method_integration = "rk4"
+
 # Define the function that gets us the accn vector when passed in the position vector
 # Acceleration is the rate of change of velocity
 def accn(r):
@@ -150,7 +153,7 @@ def rk4_method(r, v, accn, dt):
         r[i] = r[i-1] + dt/6 * (k1r + 2*k2r + 2*k3r + k4r)
 
 
-def numerical_integration(r, v, accn, dt, method='euler'):
+def numerical_integration(r, v, accn, dt, method):
     """
     This function will apply the numerical_integration based on the method choosen
     If the method is euler or rk4, the respective method will be implemented
@@ -175,7 +178,7 @@ def numerical_integration(r, v, accn, dt, method='euler'):
         raise Exception(f'You can either choose "euler" or "rk4". Your current input for method is:- {method}')
 
 # Implementation of numerical_integration 
-numerical_integration(r, v, accn, dt, method=("rk4"))
+numerical_integration(r, v, accn, dt, method=(method_integration))
 
 # Find the point at which Earth is at its Aphelion
 sizes = np.array([np.linalg.norm(position) for position in r])
@@ -183,6 +186,30 @@ pos_aphelion = np.max(sizes)
 arg_aphelion = np.argmax(sizes)
 vel_aphelion = np.linalg.norm(v[arg_aphelion])
 
-print(pos_aphelion/1e9, vel_aphelion/1e3)
+#print(pos_aphelion/1e9, vel_aphelion/1e3)
+# Plotting the Simulated Data on 3D axis
+plt.style.use("dark_background")
+plt.figure(figsize=(7, 12))
+plt.subplot(projection='3d')
+plt.suptitle(f'{method_integration.upper()} Method', color='r', fontsize=18, weight='bold')
+plt.title(
+    f'At Aphelion, the Earth is {round(pos_aphelion/1e9, 1)} million km away from the Sun\n'
+    f'Moving at the speed of {round(vel_aphelion/1e3, 1)} km/s.',
+    fontsize=14,
+    color='orange'
+)
+plt.plot(r[:, 0], r[:, 1], color='tab:pink', lw=2, label='Orbit')
+plt.scatter(0, 0, color='yellow', s=1000, label='Sun')
+plt.scatter(r[0,0], r[0,1], s=200, label='Earth at its Perihelion')
+plt.scatter(r[arg_aphelion, 0], r[arg_aphelion, 1], s=200, label='Earth at its Aphelion', color='blue')
+plt.axis('off')
+legend = plt.legend(loc='lower right', frameon=False)
+legend.legend_handles[1]._sizes = [150] # type: ignore
+legend.legend_handles[2]._sizes = [80] # type: ignore
+legend.legend_handles[3]._sizes = [80] # type: ignore
+
+plt.show()
+
+
 
 

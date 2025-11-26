@@ -10,7 +10,11 @@
     "python-envs.pythonProjects": [],
     "cSpell.words": [
         "accn",
+        "figsize",
+        "fontsize",
+        "frameon",
         "Kutta",
-        "Runge"
+        "Runge",
+        "suptitle"
     ]
 }
